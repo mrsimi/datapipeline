@@ -19,11 +19,7 @@ def get_dates_between(start_date_str, end_date_str):
     return formatted_dates
 
 def decrypt_file(gpg_file, output_file):
-    gpg = gnupg.GPG()
-    gpg_binary = '/usr/local/bin/gpg'
-    #gpg = gnupg.GPG(binary=gpg_binary)
-    #gpg = gnupg.GPG(gnupghome='/Users/simi/.gnupg')
-    #gpg = gnupg.GPG(gnupghome="/users/simi/.gnupg")
+    gpg = gnupg.GPG(binary='/Users/simi/Documents/startups/turntablecharts/datapipeline/gpnug/bin/gpg')
     with open(gpg_file, 'rb') as f:
         decrypted_data = gpg.decrypt_file(f, passphrase=GPG_PASSPHRASE)
 
@@ -55,10 +51,10 @@ def download_files(files):
 def generate_file_names(file_dates):
     result = []
     for i in range(0, len(file_dates)):
-        boomplay_name = "Boomplay_NG_"+file_dates[i]+'.csv'
+        #boomplay_name = "Boomplay_NG_"+file_dates[i]+'.csv'
         audiomack_name = 'audiomack_streams_'+file_dates[i]+'.csv.asc'
 
-        result.append(boomplay_name)
+        #result.append(boomplay_name)
         result.append(audiomack_name)
     return result
 
@@ -69,5 +65,5 @@ def get_files(start_date, end_date):
 
 
 if __name__=="__main__":
-    get_files('2023-07-20', '2023-07-21')
+    get_files('2023-07-21', '2023-07-22')
 
