@@ -1,0 +1,4 @@
+ ERROR:MY_LOGGER:This error occurred: This is test message
+INFO:MY_LOGGER:This an infor occurred: This is test message
+INFO:MY_LOGGER:log from inside metthod
+INFO:MY_LOGGER:This an infor occurred: This is test message
